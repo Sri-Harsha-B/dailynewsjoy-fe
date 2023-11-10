@@ -1,6 +1,11 @@
 <div class="header">
-  <span>
-    <h2>Daily News Joy!</h2>
-  </span>
+  <div class="row">
+    <div class="col-9">
+      <h2 routerLink="/" class="cursor">Daily News Joy!</h2>
+    </div>
+    <div class="col-3">
+      <button mat-raised-button class="my-2" routerLink="/post-news">post news</button>
+    </div>
+  </div>
 </div>
-<app-home></app-home>
+<router-outlet></router-outlet>

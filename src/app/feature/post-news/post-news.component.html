@@ -1,0 +1,40 @@
+<mat-card class="m-4 p-2">
+    <h3 class="text-center"><b>Post news</b>
+    </h3>
+
+
+    <form [formGroup]="newsForm">
+
+        <mat-form-field class="w-100">
+            <mat-label class="p-2">Title</mat-label>
+            <input matInput placeholder="Title" type="text" formControlName="titleControl" autofocus />
+
+
+            <mat-error *ngIf="this.newsForm.controls['titleControl'].hasError('required')">
+                Title <strong> cannot be empty</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+            <mat-label class="p-2">Image url</mat-label>
+            <input matInput placeholder="Image" type="text" formControlName="imageControl" autofocus />
+
+
+            <mat-error *ngIf="this.newsForm.controls['imageControl'].hasError('required')">
+                Image url <strong> cannot be empty</strong>
+            </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="w-100">
+            <mat-label class="p-2">Body</mat-label>
+            <textarea matInput placeholder="Main body of your news" type="text"
+                formControlName="newsBodyControl"></textarea>
+            <mat-error *ngIf="this.newsForm.controls['newsBodyControl'].hasError('required')">
+                news <strong> cannot be empty</strong>
+            </mat-error>
+        </mat-form-field>
+        <button mat-raised-button class="button"> post news</button>
+    </form>
+
+</mat-card>

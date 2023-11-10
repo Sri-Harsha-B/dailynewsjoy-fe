@@ -13,5 +13,10 @@ export class NewsService {
         })
     }
 
+    saveNews(news: any): Observable<any> {
+        return this.http.post('http://localhost:8080/saveNews', news, {
+            observe: 'response'
+        })
+    }
 
 }

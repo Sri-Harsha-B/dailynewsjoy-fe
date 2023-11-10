@@ -7,18 +7,22 @@ import { MaterialModule } from '../material/material.module';
 import { FirstFourLinesPipe } from './pipes/FirstFourlines.pipe';
 import { NewsService } from './service/news.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { PostNewsComponent } from './post-news/post-news.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
     HomeComponent,
-    FirstFourLinesPipe
+    FirstFourLinesPipe,
+    PostNewsComponent
   ],
   imports: [
     CommonModule,
     FeatureRoutingModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [HomeComponent],
   providers: [NewsService]
