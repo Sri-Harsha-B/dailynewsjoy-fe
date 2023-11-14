@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NewsService } from '../service/news.service';
 
 @Component({
   selector: 'app-post-news',
@@ -10,8 +11,9 @@ export class PostNewsComponent implements OnInit {
 
 
   newsForm!: FormGroup;
+  postNewsLoading!: boolean;
 
-  constructor() { }
+  constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
     this.newsForm = this.createNewsForm();
@@ -25,4 +27,19 @@ export class PostNewsComponent implements OnInit {
     })
   }
 
+  postNews() {
+    this.postNewsLoading = true;
+    if (this.newsForm.valid) {
+      let news = {
+        "title": this.newsForm.controls['titleControl'].value,
+        "image": this.newsForm.controls['imageControl'].value,
+        "body": this.newsForm.controls['newsBodyControl'].value
+      }
+
+      this.newsService.saveNews(news).subscribe(response => {
+        console.log(response.body);
+        this.postNewsLoading = false;
+      })
+    }
+  }
 }

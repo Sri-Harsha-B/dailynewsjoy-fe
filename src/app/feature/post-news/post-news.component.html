@@ -34,7 +34,14 @@
                 news <strong> cannot be empty</strong>
             </mat-error>
         </mat-form-field>
-        <button mat-raised-button class="button"> post news</button>
+        <div class="row">
+            <div class="col-3">
+                <button mat-raised-button class="button" (click)="postNews()"> post news</button>
+            </div>
+            <div class="col-3" *ngIf="postNewsLoading">
+                <mat-spinner width=" 100px"></mat-spinner>
+            </div>
+        </div>
     </form>
 
 </mat-card>
