@@ -1,0 +1,10 @@
+<div class="row">
+    <mat-card class="card-margin col-3 p-2" *ngFor="let result of news">
+        <p>{{result.dateTime |date :'medium' }}</p>
+        <h3><strong>{{result.title}}</strong></h3>
+        <img src="{{result.image}}" alt="news-image">
+        <p>{{result.body| firstFourLines}}<a class="mx-1" href="javascript:void(0)" (click)="goToNews(result)"
+                style="color: green;">read more</a>
+        </p>
+    </mat-card>
+</div>

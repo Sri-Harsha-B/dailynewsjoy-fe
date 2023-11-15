@@ -1,19 +1,9 @@
 <mat-progress-bar mode="buffer" *ngIf="isDBArticlesLoading"></mat-progress-bar>
-<div class="row" *ngIf="!isDBArticlesLoading">
-    <mat-card class="card-margin col-3 p-2" *ngFor="let result of dbArticles">
-        <p>{{result.dateTime |date :'medium' }}</p>
-        <h3><strong>{{result.title}}</strong></h3>
-        <img src="{{result.image}}">
-        <p>{{result.body| firstFourLines}}<a class="mx-1" href="javascript:void(0)">read more</a></p>
-    </mat-card>
+<div *ngIf="!isDBArticlesLoading">
+    <app-news-card [news]="dbArticles"></app-news-card>
 </div>
-
+<hr />
 <mat-progress-bar mode="indeterminate" *ngIf="isarticlesLoading"></mat-progress-bar>
-<div class="row" *ngIf="!isarticlesLoading">
-    <mat-card class="card-margin col-3 p-2" *ngFor="let result of articles?.results">
-        <p>{{result.dateTime |date :'medium' }}</p>
-        <h3><strong>{{result.title}}</strong></h3>
-        <img src="{{result.image}}">
-        <p>{{result.body| firstFourLines}}<a class="mx-1" href="javascript:void(0)">read more</a></p>
-    </mat-card>
+<div *ngIf="!isDBArticlesLoading">
+    <app-news-card [news]="articles?.results"></app-news-card>
 </div>

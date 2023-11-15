@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NewsTransferSerice } from './feature/service/news-transfer.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MaterialModule,
     NgbModule
   ],
-  providers: [],
+  providers: [NewsTransferSerice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

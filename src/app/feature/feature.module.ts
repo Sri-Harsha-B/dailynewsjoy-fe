@@ -8,13 +8,17 @@ import { FirstFourLinesPipe } from './pipes/FirstFourlines.pipe';
 import { NewsService } from './service/news.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PostNewsComponent } from './post-news/post-news.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NewsViewComponent } from './news-view/news-view.component';
+import { NewsCardComponent } from './home/news-card/news-card.component'
 
 @NgModule({
   declarations: [
     HomeComponent,
     FirstFourLinesPipe,
-    PostNewsComponent
+    PostNewsComponent,
+    NewsViewComponent,
+    NewsCardComponent
   ],
   imports: [
     CommonModule,

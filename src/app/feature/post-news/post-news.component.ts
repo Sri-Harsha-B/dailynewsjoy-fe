@@ -41,5 +41,8 @@ export class PostNewsComponent implements OnInit {
         this.postNewsLoading = false;
       })
     }
+    else{
+      this.postNewsLoading = false;
+    }
   }
 }

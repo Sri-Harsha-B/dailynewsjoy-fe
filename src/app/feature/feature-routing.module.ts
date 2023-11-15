@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PostNewsComponent } from './post-news/post-news.component';
+import { NewsViewComponent } from './news-view/news-view.component';
 
 const routes: Routes = [{
   path: '',
@@ -10,6 +11,10 @@ const routes: Routes = [{
 {
   path: 'post-news',
   component: PostNewsComponent
+},
+{
+  path: 'article',
+  component: NewsViewComponent
 }
 ];
 
